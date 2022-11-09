@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>form </title>
+</head>
+<body>
+    <h1>You chose plan1 </h1>
+    <form>
+        <fieldset>
+            <div>
+                <b>Please fill out your shipping details: </b> <br> <br>
+                <label for="fname">First Name:</label>
+                <input type="text" name="f_name" placeholder="Enter first name" required="required">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="l_name" placeholder="Enter last name" required="required">
+                <br> <br>
+                <b>District and Shipping Address: </b> <br> <br>
+                <label for="district"> District:</label>
+                <input name="district" list="districts" placeholder="Choose a district">
+                <datalist id="districts">
+                    <option value="Northern District"></option>
+                    <option value="Haifa District"></option>
+                    <option value="Central District"></option>
+                    <option value="Tel Aviv District"></option>
+                    <option value="Southern District"></option>
+                </datalist>
+                <label for="address"> Shipping Address:</label>
+                <input type="text" name="address" placeholder="Derech Hashalom 32, Dimona" required="required">
+            </div>
+            <br><br>
+            <div>
+                <b>Please enter your phone number: </b> <br> <br>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phonenumber" placeholder="000-000-0000" required="required">
+            </div>
+            <br><br>
+            <div>
+                <b>Please fill out you CC details: </b> <br> <br>
+                <label for="ccnum">Credit Card Number: </label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required="required">
+                <br> <br>
+                <input type="text" id="cvv" name="cardnumber" placeholder="CVV" required="required">
+                <br> <br>
+                <input name="exp" list="exp" placeholder="Exp Month" required="required">
+                <datalist id="exp">
+                    <option value="01"></option>
+                    <option value="02"></option>
+                    <option value="03"></option>
+                    <option value="04"></option>
+                    <option value="05"></option>
+                    <option value="06"></option>
+                    <option value="07"></option>
+                    <option value="08"></option>
+                    <option value="09"></option>
+                    <option value="10"></option>
+                    <option value="11"></option>
+                    <option value="12"></option>
+                </datalist>
+                <input name="exp" list="exp" placeholder="Exp Year" placeholder="XXXX" required="required">
+            </div>
+        </fieldset>
+        <br><br>
+        <br><br>
+        <fieldset>
+            <div>
+                <b> Submit here: </b><br> <br>
+                <input type="submit" name="submit" /> 
+            </div>
+        </fieldset>
+    </form>
+</body>

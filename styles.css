@@ -1,0 +1,44 @@
+body {
+    text-align: center;  
+    background-image: url('pic1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+  
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #container > div {
+    font-size: 20px;
+    margin: 0px;
+    padding: 10px;
+    width: 200px;
+  }
+
+  button {
+    border-radius: 12px;
+    background-color: blue;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  table, th, td {
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #96D4D4;
+  }
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }

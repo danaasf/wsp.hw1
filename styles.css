@@ -1,9 +1,16 @@
 body {
+    font-family: monospace;
     text-align: center;  
     background-image: url('pic1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+  }
+  p, ol, li{
+    text-align: center;
+  }
+  mark{
+    background-color: bisque;
   }
   
   #container {
@@ -13,6 +20,7 @@ body {
   }
   
   #container > div {
+    font-family: monospace;
     font-size: 20px;
     margin: 0px;
     padding: 10px;
@@ -21,7 +29,7 @@ body {
 
   button {
     border-radius: 12px;
-    background-color: blue;
+    background-color: whitesmoke;
     color: black;
     padding: 15px 30px;
     text-align: center;
@@ -29,15 +37,18 @@ body {
   }
 
   table, th, td {
+    font-family: monospace;
+    text-align: center;
+    align-self: center;
     table-layout: fixed;
     width: 100%;
     border: 1px solid white;
     border-collapse: collapse;
   }
-  th, td {
+  /*th, td {
     background-color: #96D4D4;
   }
-  
+  */
   .center {
     margin-left: auto;
     margin-right: auto;

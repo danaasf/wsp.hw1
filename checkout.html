@@ -5,8 +5,8 @@
     <title>form </title>
 </head>
 <body>
-    <h1>You chose plan1 </h1>
-    <form>
+    <h1 id="planSelected"></h1>
+    <form id="checkoutForm">
         <fieldset>
             <div>
                 <b>Please fill out your billing details: </b> <br> <br>
@@ -17,15 +17,14 @@
                 <br> <br>
                 <b>District and Billing Address: </b> <br> <br>
                 <label for="district"> District:</label>
-                <input name="district" list="districts" placeholder="Choose a district">
-                <datalist id="districts">
-                    <option value="Northern District"></option>
-                    <option value="Haifa District"></option>
-                    <option value="Central District"></option>
-                    <option value="Tel Aviv District"></option>
-                    <option value="Southern District"></option>
-                    <option value="ur mum"></option>
-                </datalist>
+                <!-- <input name="district" list="districts" placeholder="Choose a district"> -->
+                <select name="district" id="districts">
+                    <option value="Northern District">Northern District</option>
+                    <option value="Haifa District">Haifa District</option>
+                    <option value="Central District">Central District</option>
+                    <option value="Tel Aviv District">Tel Aviv District</option>
+                    <option value="Southern District">Southern District</option>
+                </select>
                 <label for="address"> Billing Address:</label>
                 <input type="text" name="address" placeholder="Derech Hashalom 32, Dimona" required="required">
             </div>
@@ -39,26 +38,27 @@
             <div>
                 <b>Please fill out you CC details: </b> <br> <br>
                 <label for="ccnum">Credit Card Number: </label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required="required">
+                <input type="text" id="ccnum" name="cardnumber" size="16" placeholder="1111-2222-3333-4444"  required="required">
                 <br> <br>
-                <input type="text" id="cvv" name="cardnumber" placeholder="CVV" required="required">
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required="required">
                 <br> <br>
-                <input name="exp" list="exp" placeholder="Exp Month" required="required">
-                <datalist id="exp">
-                    <option value="01"></option>
-                    <option value="02"></option>
-                    <option value="03"></option>
-                    <option value="04"></option>
-                    <option value="05"></option>
-                    <option value="06"></option>
-                    <option value="07"></option>
-                    <option value="08"></option>
-                    <option value="09"></option>
-                    <option value="10"></option>
-                    <option value="11"></option>
-                    <option value="12"></option>
-                </datalist>
-                <input name="exp" list="exp" placeholder="Exp Year" placeholder="XXXX" required="required">
+                <label for="expMonth" type="text">Exp Month</label>
+                <!-- <input name="expMonth" list="exp" placeholder="Exp Month" required="required"> -->
+                <select name="expMonth" id="exp">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <input name="expYear"  placeholder="Exp Year" placeholder="XXXX" required="required">
             </div>
         </fieldset>
         <br><br>
@@ -70,4 +70,5 @@
             </div>
         </fieldset>
     </form>
+    <script type="module" src="/checkout.js"> </script>
 </body>

@@ -34,38 +34,52 @@ checkoutForm.onsubmit = (target) => {
     return;
   }
   
-  let englishLetters = /^[A-Za-z0-9]*$/;
+  let englishLetters = /^[A-Za-z]*$/;
   if (!englishLetters.test(checkoutForm.f_name.value) ||
   !englishLetters.test(checkoutForm.l_name.value)) {
     alert("First and last name must be English letters only!");
     return;
   }
 
-  if (checkoutForm.cardnumber.value.length != 16 ||
-    isNaN(checkoutForm.cardnumber.value)) {
-    alert ("Credit card number must be 16 digits!")
+  if (checkoutForm.cardnumber.value.length != 16 ) {
+    alert ("Credit card number must be 16 digits!");
     return;
   }
 
-  if (checkoutForm.cvv.value.length != 3 ||
-    isNaN(checkoutForm.cvv.value)) {
-    alert ("CVV must be 3 digits!")
+  if (isNaN(checkoutForm.cardnumber.value)) {
+    alert ("Credit card number must be in numbers only!");
+    return;
+  }
+
+  if (checkoutForm.cvv.value.length != 3 ) {
+    alert ("CVV must be 3 digits!");
+    return;
+  }
+
+  if ( isNaN(checkoutForm.cvv.value)){
+    alert ("CVV must be in numbers only!");
     return;
   }
 
   const date = new Date();
 
-  if (date.getFullYear() == parseInt(checkoutForm.expYear.value)) {
+  if ((date.getFullYear()%100) == (parseInt(checkoutForm.expYear.value)%100)) {
     
     if (parseInt(checkoutForm.expMonth.value) < date.getMonth()) {
-        alert("Please insert valid expiration date");
+        alert("Credit card has expired! Please insert valid expiration date!");
         return;
     }
   }
-  else if (date.getFullYear() > parseInt(checkoutForm.expYear.value)) {
-    alert("Please insert valid expiration date");
+  else if ((date.getFullYear()%100) > (parseInt(checkoutForm.expYear.value)%100)) {
+    alert("Credit card has expired! Please insert valid expiration date!");
     return;
   }
   
-  window.location = "/thank_you.html?plan=" + selectedPlan;
-};
+
+  if (monthly) {
+    window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=true"; 
+  } else {
+        window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=false";
+    }}
+
+

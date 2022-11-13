@@ -6,15 +6,21 @@ for (let i = 0; i < plansList.length; i++) {
 
     let rows = document.querySelectorAll("table#plansTable tr");
 
+    //creating the element using createElement 
     let nameTh = document.createElement("th");
+    //textContent fills the element with text
     nameTh.textContent = plansList[i].name;
+    //appendChild 
     rows[0].appendChild(nameTh);
+
     let planBr = document.createElement("br");
     nameTh.appendChild(planBr);
+    
     let planBtn = document.createElement("button");
     planBtn.onclick = (target => {
         window.location = "/cycle.html?plan=" + i;
     });
+
     planBtn.textContent= plansList[i].yearlySubPrice;
     nameTh.appendChild(planBtn);
 

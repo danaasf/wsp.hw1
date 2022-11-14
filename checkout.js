@@ -51,6 +51,11 @@ checkoutForm.onsubmit = (target) => {
     return;
   }
 
+  if(isNaN(checkoutForm.phonenumber.value) || checkoutForm.phonenumber.value.length!= 10){
+    alert ("Phone number is invalid!")
+    return;
+  }
+
   if (checkoutForm.cvv.value.length != 3 ) {
     alert ("CVV must be 3 digits!");
     return;
@@ -75,11 +80,11 @@ checkoutForm.onsubmit = (target) => {
     return;
   }
   
-
   if (monthly) {
     window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=true"; 
   } else {
         window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=false";
-    }}
+    }
+}
 
 

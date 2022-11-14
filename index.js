@@ -2,6 +2,15 @@ import { plansList } from "./data.js";
 
 const table = document.getElementById("plansTable");
 
+function toEmoji (attribute) {
+    if (attribute === "true") {
+        attribute = "✔";
+    } else if( attribute ==="false") {
+         attribute = "✖";
+        }
+    return attribute;
+};
+
 for (let i = 0; i < plansList.length; i++) {
 
     let rows = document.querySelectorAll("table#plansTable tr");
@@ -18,10 +27,10 @@ for (let i = 0; i < plansList.length; i++) {
     
     let planBtn = document.createElement("button");
     planBtn.onclick = (target => {
-        window.location = "/cycle.html?plan=" + i;
+        window.location = "/cycle.html?plan=" + i ;
     });
 
-    planBtn.textContent= plansList[i].yearlySubPrice;
+    planBtn.textContent= plansList[i].yearlySubPrice +"$";
     nameTh.appendChild(planBtn);
 
     let monthlySubTh = document.createElement("th");
@@ -42,13 +51,17 @@ for (let i = 0; i < plansList.length; i++) {
     
     let specialAvatar = document.createElement("th");
     specialAvatar.textContent = plansList[i].specialAvatar;
+    specialAvatar.textContent= toEmoji(specialAvatar.textContent);
     rows[5].appendChild(specialAvatar);
     
     let tShirt = document.createElement("th");
     tShirt.textContent = plansList[i].tShirt;
+    tShirt.textContent =toEmoji(tShirt.textContent);
     rows[6].appendChild(tShirt);
 
     let customerCare = document.createElement("th");
     customerCare.textContent = plansList[i].customerCare;
+    customerCare.textContent=toEmoji(customerCare.textContent);
     rows[7].appendChild(customerCare);
-}
+};
+

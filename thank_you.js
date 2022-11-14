@@ -7,8 +7,8 @@ let planSelected = document.getElementById("planSelected");
 
 if (monthly) {
   planSelected.textContent =
-    "You chose a monthly " + plansList[plan_num].name;
+    "Thank you for purchasing a monthly " + plansList[plan_num].name;
 } else {
   planSelected.textContent =
-    "You chose a yearly " + plansList[plan_num].name;
+    "Thank you for purchasing a yearly " + plansList[plan_num].name;
 }

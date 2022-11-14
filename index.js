@@ -27,7 +27,7 @@ for (let i = 0; i < plansList.length; i++) {
     
     let planBtn = document.createElement("button");
     planBtn.onclick = (target => {
-        window.location = "/cycle.html?plan=" + i ;
+        window.location = "./cycle.html?plan=" + i ;
     });
 
     planBtn.textContent= plansList[i].yearlySubPrice +"$";

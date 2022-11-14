@@ -86,11 +86,13 @@ checkoutForm.onsubmit = (target) => {
     return;
   }
 
-  //console.log("here");
+  let submitBtn= document.getElementById("submit");
+
   if (monthly) {
-    window.location = "./thank_you.html?plan=" + selectedPlan + "&monthly=true";
+    submitBtn.onclick = (target => {
+        window.location = "./thank_you.html?plan=" + selectedPlan + "&monthly=true";})
   } else {
-    window.location =
-      "./thank_you.html?plan=" + selectedPlan + "&monthly=false";
+    submitBtn.onclick= (target => { 
+        window.location = "./thank_you.html?plan=" + selectedPlan + "&monthly=false"} );
   }
 };

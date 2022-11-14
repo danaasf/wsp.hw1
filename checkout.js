@@ -81,9 +81,9 @@ checkoutForm.onsubmit = (target) => {
   }
   
   if (monthly) {
-    window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=true"; 
+    window.location = "./thank_you.html?plan=" + selectedPlan +"&monthly=true"; 
   } else {
-        window.location = "/thank_you.html?plan=" + selectedPlan +"&monthly=false";
+        window.location = "./thank_you.html?plan=" + selectedPlan +"&monthly=false";
     }
 }
 

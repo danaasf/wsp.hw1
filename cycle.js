@@ -12,10 +12,10 @@ document.getElementById("yearlyPrice").textContent = "Only " + plansList[selecte
 
 let monthlyClick = document.getElementById("monthlyClick");
 monthlyClick.onclick = (target => {
-    window.location = "/checkout.html?plan=" + selectedPlan + "&monthly=true";
+    window.location = "./checkout.html?plan=" + selectedPlan + "&monthly=true";
 });
 
 let yearlyClick = document.getElementById("yearlyClick");
 yearlyClick.onclick = (target => {
-    window.location = "/checkout.html?plan=" + selectedPlan + "&monthly=false";
+    window.location = "./checkout.html?plan=" + selectedPlan + "&monthly=false";
 });

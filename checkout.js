@@ -86,7 +86,7 @@ checkoutForm.onsubmit = (target) => {
     return;
   }
 
-  console.log("here");
+  //console.log("here");
   if (monthly) {
     window.location = "./thank_you.html?plan=" + selectedPlan + "&monthly=true";
   } else {
